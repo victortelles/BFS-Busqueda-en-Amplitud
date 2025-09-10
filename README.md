@@ -2,6 +2,40 @@
 
 Actividad de Fundamentos de inteligencia artificial para aprender el algoritmo de **Búsqueda en Amplitud (BFS)** con visualización interactiva paso a paso.
 
+## ⚡ Quick Start
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/victortelles/BFS-Busqueda-en-Amplitud.git
+cd BFS-Busqueda-en-Amplitud
+
+# 2. Instalar dependencias
+pip install flask
+
+# 3. Ejecutar servidor
+python app.py
+
+# 4. Abrir navegador en: http://localhost:5000
+```
+
+## 📋 Tabla de Contenidos
+
+- [📋 Descripción del Proyecto](#-descripción-del-proyecto)
+- [🏗️ Estructura del Proyecto](#️-estructura-del-proyecto)
+- [🚀 Instalación y Ejecución](#-instalación-y-ejecución)
+- [🎬 Demo en Vivo](#-demo-en-vivo)
+- [📸 Capturas de Pantalla](#-capturas-de-pantalla)
+- [📚 Características del Algoritmo BFS](#-características-del-algoritmo-bfs)
+- [🎮 Cómo Usar la Visualización](#-cómo-usar-la-visualización)
+- [🔍 Ejemplo de Ejecución](#-ejemplo-de-ejecución-a--j)
+- [🎓 Objetivos Educativos](#-objetivos-educativos)
+- [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
+- [📖 Archivos Importantes](#-archivos-importantes)
+- [🎓 Para Profesores](#-para-profesores)
+- [🔧 Extensiones Posibles](#-extensiones-posibles)
+- [📞 Soporte](#-soporte)
+- [👥 Créditos](#-créditos)
+
 ## 📋 Descripción del Proyecto
 
 Este proyecto implementa el algoritmo BFS con:
@@ -35,7 +69,7 @@ BFS/
 ### 0. Clona el repositorio de descargalo
 
 ```bash
-git clone https://github.com/tu_usuario/BFS-Busqueda-en-Amplitud.git
+git clone https://github.com/victortelles/BFS-Busqueda-en-Amplitud.git
 ```
 
 ### 1. Configurar entorno Python
@@ -71,6 +105,32 @@ python app.py
 ### 4. Abrir en navegador
 
 Ir a: `http://localhost:5000`
+
+## 🎬 Demo en Vivo
+
+### 🌐 **Demo Online**
+Puedes probar el proyecto directamente desde tu navegador:
+- **Demo en línea**: [BFS Visualization Demo](https://victortelles.github.io/BFS-Busqueda-en-Amplitud) *(próximamente)*
+
+### 💻 **Demo Local**
+2. **Método manual**: Sigue las instrucciones de instalación arriba
+
+### 🎯 **Funcionalidades de la Demo**
+- ✅ **Visualización interactiva** del grafo con nodos y aristas
+- ✅ **Ejecución paso a paso** con controles de navegación
+- ✅ **Información en tiempo real** del estado del algoritmo
+- ✅ **Múltiples nodos** de inicio y destino seleccionables
+- ✅ **Explicaciones educativas** integradas
+
+## 📸 Capturas de Pantalla
+
+### 🖥️ **Interfaz Principal**
+![Interfaz Principal del BFS Visualizer](image.png)
+*Vista general de la aplicación con el grafo y controles de navegación*
+
+### 🔍 **Visualización del Algoritmo en Acción**
+![BFS en Ejecución](image-1.png)
+*El algoritmo BFS ejecutándose paso a paso, mostrando nodos visitados (morado) y la frontera actual (azul)*
 
 ## 📚 Características del Algoritmo BFS
 
@@ -193,12 +253,41 @@ Si encuentras problemas:
 
 **Fundamentos de Inteligencia Artificial** | Proyecto educativo BFS
 
-### Créditos
+![Status](https://img.shields.io/badge/Status-Completo-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.12+-blue)
+![Flask](https://img.shields.io/badge/Flask-2.3.3-lightgrey)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-- **Desarrolladores**: [Victor Telles](https://github.com/victortelles)
-- **AI**: Con Ayuda de 'Claude sonnet 4'
+## 👥 Créditos
 
-- **Recursos**:
-  - [Documentación de Flask](https://flask.palletsprojects.com)
-  - [D3.js](https://d3js.org/)
-  - [Profesor Fernando V. - Clase BFS Búsqueda en Amplitud](https://www.linkedin.com/in/fernando-velasco-loera/?originalSubdomain=mx)
+### 👨‍💻 **Desarrollo**
+- **Desarrollador Principal**: [Victor Telles](https://github.com/victortelles)
+- **Asistente IA**: Claude Sonnet 3.5 (Anthropic)
+- **Repositorio**: [BFS-Busqueda-en-Amplitud](https://github.com/victortelles/BFS-Busqueda-en-Amplitud)
+
+### 🎓 **Académico**
+- **Profesor**: [Fernando Velasco Loera](https://www.linkedin.com/in/fernando-velasco-loera/?originalSubdomain=mx)
+- **Materia**: Fundamentos de Inteligencia Artificial
+- **Institución**: Universidad/Colegio
+- **Año**: 2025
+
+### 📚 **Recursos y Referencias**
+- [Documentación de Flask](https://flask.palletsprojects.com) - Framework web
+- [D3.js](https://d3js.org/) - Visualización de datos
+- [Bootstrap](https://getbootstrap.com/) - Estilos CSS
+- [Algoritmos de Búsqueda](https://es.wikipedia.org/wiki/Algoritmo_de_b%C3%BAsqueda) - Referencia teórica
+
+### 🤝 **Contribuciones**
+¿Quieres contribuir al proyecto? 
+1. Haz un Fork del repositorio
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit tus cambios (`git commit -am 'Agregar nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
+
+### 📄 **Licencia**
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+---
+
+⭐ **¡No olvides dar una estrella al repositorio si te fue útil!** ⭐
