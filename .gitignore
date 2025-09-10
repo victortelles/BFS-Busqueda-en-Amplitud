@@ -2,3 +2,18 @@
 /venv
 *.pyc
 __pycache__/
+
+# Archivos que Vercel debe ignorar
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+.DS_Store
+*.log
+.git/
+node_modules/
+*.md
+!README.md
