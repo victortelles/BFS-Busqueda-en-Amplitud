@@ -5,6 +5,7 @@ Wrapper de Vercel para la aplicación Flask BFS
 
 import sys
 import os
+from flask import Flask
 
 # Agregar el directorio raíz al path para importar app.py
 root_path = os.path.dirname(os.path.dirname(__file__))
@@ -13,13 +14,12 @@ sys.path.insert(0, root_path)
 # Importar la aplicación Flask desde app.py
 from app import app
 
-# Esta es la función que Vercel ejecutará
-def handler(request):
+# Función principal para Vercel
+def handler(event, context):
     """
     Handler function for Vercel serverless deployment
     """
-    return app(request.environ, lambda status, headers: None)
+    return app
 
-# Para compatibilidad con Vercel
-if __name__ == "__main__":
-    app.run()
+# Para compatibilidad con Vercel, exportamos la app directamente
+app = app
