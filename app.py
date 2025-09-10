@@ -3,7 +3,7 @@ Flask Server - BFS Visualization
 Servidor Flask para la visualización del algoritmo BFS
 """
 
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, send_from_directory
 import sys
 import os
 
@@ -21,6 +21,14 @@ app = Flask(__name__,
 # Instancia global del grafo
 bfs_graph = BFSGraph()
 
+
+# Endpoint para servir archivos de la carpeta public
+@app.route('/public/<path:filename>')
+def public_files(filename):
+    """
+    Servir archivos estáticos de la carpeta public
+    """
+    return send_from_directory('public', filename)
 
 # Endpoint para la página principal
 @app.route('/')
