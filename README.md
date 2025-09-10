@@ -125,11 +125,11 @@ Puedes probar el proyecto directamente desde tu navegador:
 ## 📸 Capturas de Pantalla
 
 ### 🖥️ **Interfaz Principal**
-![Interfaz Principal del BFS Visualizer](image.png)
+![Interfaz Principal del BFS Visualizer](/public/screenshots/image.png)
 *Vista general de la aplicación con el grafo y controles de navegación*
 
 ### 🔍 **Visualización del Algoritmo en Acción**
-![BFS en Ejecución](image-1.png)
+![BFS en Ejecución](/public/screenshots/image-1.png)
 *El algoritmo BFS ejecutándose paso a paso, mostrando nodos visitados (morado) y la frontera actual (azul)*
 
 ## 📚 Características del Algoritmo BFS
