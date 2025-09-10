@@ -69,6 +69,25 @@ body {
     font-size: 0.9em;
 }
 
+/* Github */
+.github-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+}
+
+.github-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.github-link:hover .github-icon {
+    transform: scale(1.1);
+}
+
 .control-group select {
     padding: 10px 15px;
     border: 2px solid #e1e8ed;
