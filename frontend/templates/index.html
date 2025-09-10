@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFS - Búsqueda en Amplitud | Visualización Interactiva</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🔍 Algoritmo BFS - Búsqueda en Amplitud</h1>
+            <p>Visualización interactiva paso a paso del algoritmo de búsqueda</p>
+        </header>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="controls-row">
+                <!-- Nodo Inicial -->
+                <div class="control-group">
+                    <label for="start-node">Nodo Inicial:</label>
+                    <select id="start-node">
+                        <option value="A" selected>A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                    </select>
+                </div>
+
+                <!-- Nodo objetivo -->
+                <div class="control-group">
+                    <label for="goal-node">Nodo Objetivo:</label>
+                    <select id="goal-node">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J" selected>J</option>
+                    </select>
+                </div>
+
+                <!-- Botones -->
+                <button id="run-bfs" class="btn btn-primary">🚀 Ejecutar BFS</button>
+                <button id="reset" class="btn btn-secondary">🔄 Reiniciar</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Graph Visualization -->
+            <div class="graph-container">
+                <h2>📊 Visualización del Grafo</h2>
+                <div id="graph-svg"></div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color initial"></div>
+                        <span>Nodo Inicial</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color goal"></div>
+                        <span>Nodo Objetivo</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color current"></div>
+                        <span>Nodo Actual</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color visited"></div>
+                        <span>Nodo Visitado</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color frontier"></div>
+                        <span>En Frontera</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color solution"></div>
+                        <span>Camino Solución</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step Information -->
+            <div class="step-container">
+                <h2>📋 Información del Paso Actual</h2>
+                <div id="step-info">
+                    <p>Presiona "Ejecutar BFS" para comenzar la visualización</p>
+                </div>
+                
+                <!-- Step Controls -->
+                <div class="step-controls">
+                    <button id="prev-step" class="btn btn-small" disabled>⏮️ Anterior</button>
+                    <button id="next-step" class="btn btn-small" disabled>⏭️ Siguiente</button>
+                    <button id="auto-play" class="btn btn-small" disabled>⏯️ Auto</button>
+                </div>
+                
+                <!-- Progress -->
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <span id="current-step">0</span> / <span id="total-steps">0</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Algorithm Information -->
+        <div class="algorithm-info">
+            <h2>📚 Información del Algoritmo</h2>
+            <div class="info-tabs">
+                <button class="tab-btn active" data-tab="description">Descripción</button>
+                <button class="tab-btn" data-tab="complexity">Complejidad</button>
+                <button class="tab-btn" data-tab="queue">Estado de la Cola</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <h3>¿Qué es BFS?</h3>
+                <p>La <strong>Búsqueda en Amplitud (BFS)</strong> es un algoritmo de búsqueda que explora todos los nodos a la misma distancia antes de avanzar a la siguiente distancia.</p>
+
+                <h3>Características:</h3>
+                <ul>
+                    <li>✅ <strong>Completo:</strong> Siempre encuentra una solución si existe</li>
+                    <li>✅ <strong>Óptimo:</strong> Encuentra la solución con menor número de pasos</li>
+                    <li>🔄 <strong>Sistemático:</strong> Usa una cola FIFO (First In, First Out)</li>
+                    <li>📏 <strong>Nivel por nivel:</strong> Explora por niveles de profundidad</li>
+                </ul>
+            </div>
+            
+            <div id="complexity" class="tab-content">
+                <h3>Complejidad del Algoritmo</h3>
+                <ul>
+                    <li><strong>Temporal:</strong> O(V + E) donde V = nodos, E = aristas</li>
+                    <li><strong>Espacial:</strong> O(V) para almacenar la cola y nodos visitados</li>
+                    <li><strong>Ventaja:</strong> Garantiza el camino más corto en grafos no ponderados</li>
+                </ul>
+            </div>
+            
+            <div id="queue" class="tab-content">
+                <h3>Estado Actual de la Cola (Frontera)</h3>
+                <div id="queue-visualization">
+                    <p>La cola estará visible durante la ejecución del algoritmo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>📖 Proyecto educativo para aprender BFS | Fundamentos de Inteligencia Artificial</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

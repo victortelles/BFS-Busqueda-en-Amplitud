@@ -1,0 +1,5 @@
+# BFS Algorithm Visualization - Requirements
+# Dependencias para el proyecto de visualización del algoritmo BFS
+
+Flask==2.3.3
+Werkzeug==2.3.7

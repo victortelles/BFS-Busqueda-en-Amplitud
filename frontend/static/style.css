@@ -1,0 +1,479 @@
+/* BFS Visualization - Estilos CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+/* Control Panel */
+.control-panel {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9em;
+}
+
+.control-group select {
+    padding: 10px 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1em;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.control-group select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9em;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Graph Container */
+.graph-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.graph-container h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+#graph-svg {
+    width: 100%;
+    height: 500px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    background: #fafbfc;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+.legend-color.initial { background: #e74c3c; }
+.legend-color.goal { background: #27ae60; }
+.legend-color.current { background: #f39c12; }
+.legend-color.visited { background: #9b59b6; }
+.legend-color.frontier { background: #3498db; }
+.legend-color.solution { background: #e67e22; }
+
+/* Step Container */
+.step-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.step-container h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+#step-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 150px;
+    line-height: 1.6;
+}
+
+#step-info h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#step-info p {
+    margin-bottom: 10px;
+}
+
+#step-info ul {
+    margin-left: 20px;
+}
+
+#step-info .highlight {
+    background: #fff3cd;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Step Controls */
+.step-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+/* Progress */
+.progress-container {
+    margin-top: 20px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e1e8ed;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Algorithm Info */
+.algorithm-info {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.algorithm-info h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Tabs */
+.info-tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e1e8ed;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    color: #7f8c8d;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.tab-btn.active {
+    color: #3498db;
+    border-bottom-color: #3498db;
+}
+
+.tab-btn:hover {
+    color: #2980b9;
+}
+
+.tab-content {
+    display: none;
+    line-height: 1.6;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h3 {
+    color: #2c3e50;
+    margin: 20px 0 10px 0;
+}
+
+.tab-content ul {
+    margin-left: 20px;
+}
+
+.tab-content li {
+    margin-bottom: 8px;
+}
+
+/* Queue Visualization */
+#queue-visualization {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.queue-item {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    color: white;
+}
+
+/* SVG Styles for Graph */
+.node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node.initial {
+    fill: #e74c3c;
+}
+
+.node.goal {
+    fill: #27ae60;
+}
+
+.node.current {
+    fill: #f39c12;
+    stroke: #d68910;
+    stroke-width: 3px;
+}
+
+.node.visited {
+    fill: #9b59b6;
+}
+
+.node.frontier {
+    fill: #3498db;
+}
+
+.node.solution {
+    fill: #e67e22;
+}
+
+.node.default {
+    fill: #ecf0f1;
+    stroke: #bdc3c7;
+    stroke-width: 2px;
+}
+
+.node:hover {
+    stroke: #2c3e50;
+    stroke-width: 3px;
+}
+
+.link {
+    stroke: #95a5a6;
+    stroke-width: 2px;
+    fill: none;
+}
+
+.link.solution {
+    stroke: #e67e22;
+    stroke-width: 4px;
+}
+
+.node-label {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+    dominant-baseline: central;
+    fill: #2c3e50;
+    pointer-events: none;
+}
+
+.edge-label {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    text-anchor: middle;
+    fill: #7f8c8d;
+    background: white;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.node.current {
+    animation: pulse 1s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .controls-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .control-group {
+        width: 100%;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    #graph-svg {
+        height: 400px;
+    }
+    
+    .legend {
+        justify-content: center;
+    }
+}
