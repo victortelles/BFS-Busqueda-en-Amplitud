@@ -108,7 +108,7 @@ Ir a: `http://localhost:5000`
 
 ### 🌐 **Demo Online**
 Puedes probar el proyecto directamente desde tu navegador:
-- **Demo en línea**: [BFS Visualization Demo](https://bfs-busqueda-amplitud-trhdedz8f-victortelles-projects.vercel.app/)
+- **Demo en línea**: [BFS Visualization Demo](https://bfs-busqueda-amplitud.vercel.app/)
 
 ### 💻 **Demo Local**
 2. **Método manual**: Sigue las instrucciones de instalación arriba
